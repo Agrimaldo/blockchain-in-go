@@ -14,7 +14,7 @@ type Block struct {
 	PreviousHash  string
 	Hash          string
 	CreatedAt     time.Time     `bun:"createdAt,nullzero,notnull,default:current_timestamp"`
-	Transactions  []Transaction `bun:"rel:has-many,join:Id=blockId"`
+	Transactions  []Transaction `bun:"rel:has-many,join:Id=BlockId"`
 }
 
 type Transaction struct {
@@ -27,5 +27,5 @@ type Transaction struct {
 	Message       string
 	BlockId       sql.NullInt64
 	CreatedAt     time.Time `bun:"createdAt,nullzero,notnull,default:current_timestamp"`
-	Block         *Block    `bun:"rel:has-one,join:blockId=Id"`
+	Block         *Block    `bun:"rel:has-one,join:BlockId=Id"`
 }
