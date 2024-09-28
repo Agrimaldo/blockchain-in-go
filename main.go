@@ -24,6 +24,7 @@ func main() {
 	config.EnvVariables.Load()
 	StartDBBun()
 	api.Routes()
+
 	//shell := os.Getenv("LOCAL_ENV")
 	//fmt.Println("first Go Lang Program!")
 	//fmt.Printf("TEST: %s\n", config.EnvVariables.DatabaseHost)
